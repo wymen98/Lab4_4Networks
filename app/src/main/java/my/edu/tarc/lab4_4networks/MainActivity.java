@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     List<Course> caList;
     private ProgressDialog pDialog;
     //TODO: Please update the URL to point to your own server
-    private static String GET_URL = getString(R.string.selectCourse);
+    private static String GET_URL;
     RequestQueue queue;
 
     @Override
@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         listViewCourse = (ListView) findViewById(R.id.listViewRecords);
         pDialog = new ProgressDialog(this);
         caList = new ArrayList<>();
+
+        GET_URL = getString(R.string.selectCourse);
 
         if (!isConnected()) {
             Toast.makeText(getApplicationContext(), "No network", Toast.LENGTH_LONG).show();
